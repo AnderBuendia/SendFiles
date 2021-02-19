@@ -7,7 +7,6 @@ import authContext from '../context/auth/authContext';
 import Alert from '../components/Alert';
 
 const Login = () => {
-
     /* Get authContext */
     const AuthContext = useContext(authContext);
     const { message, authenticated, login } = AuthContext;

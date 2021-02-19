@@ -5,41 +5,7 @@ import axiosClient from '../../config/axios';
 import appContext from '../../context/app/appContext';
 import Alert from '../../components/Alert';
 
-/** With this fn, we get the response and data 
- * You can use getServerSideProps (fetch data on each request)
- * getStaticProps (fetch data at build time)
-*/
-export async function getServerSideProps({params}) {
-    const { link } = params;
-
-    const res = await axiosClient.get(`api/links/${link}`);
-    // console.log(res);
-
-    return {
-        /* props are required */
-        props: {
-            link: res.data
-        }
-    }
-}
-
-/* This fn is for routing / You can use getStaticPaths */
-export async function getServerSidePaths() {
-    const links = await axiosClient.get('/api/links')
-    // console.log(links.data);
-
-    return {
-        /* paths and fallback are required */
-        paths: links.data.links.map(link => ({
-            params: { link: link.url }
-        })),
-        fallback: false
-    }
-}
-
-export default ({link}) => {
-    // console.log(link)
-
+const PageLink = ({link}) => {
     /* appContext */
     const AppContext = useContext(appContext);
     const { showAlert, file_msg } = AppContext;
@@ -47,8 +13,6 @@ export default ({link}) => {
 
     const [hasPassword, setHasPassword] = useState(link.password);
     const [password, setPassword] = useState('');
-
-    // console.log(hasPassword);
 
     const verifyPassword = async e => {
         e.preventDefault();
@@ -108,10 +72,10 @@ export default ({link}) => {
               
                 ) : (
                     <>
-                        <h1 className="text-4xl text-center text-gray-700">Download your file:</h1>
+                        <h1 className="text-4xl text-center text-gray-700">Download your file</h1>
                         <div className="flex items-center justify-center mt-10">
                             <a 
-                                href={`${process.env.backendURL}/api/files/${link.file}`} 
+                                href={`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/files/${link.file}`} 
                                 className="bg-red-500 text-center px-10 py-3 rounded uppercase font-bold text-white cursor-pointer"
                                 download
                             >  
@@ -124,3 +88,35 @@ export default ({link}) => {
         </Layout>
     )
 }
+
+/** With this fn, we get the response and data 
+ * You can use getServerSideProps (fetch data on each request)
+ * getStaticProps (fetch data at build time)
+*/
+export async function getServerSideProps({params}) {
+    const { link } = params;
+
+    const res = await axiosClient.get(`api/links/${link}`);
+
+    return {
+        /* props are required */
+        props: {
+            link: res.data
+        }
+    }
+};
+
+/* This fn is for routing / You can use getStaticPaths */
+export async function getServerSidePaths() {
+    const links = await axiosClient.get('/api/links')
+
+    return {
+        /* paths and fallback are required */
+        paths: links.data.links.map(link => ({
+            params: { link: link.url }
+        })),
+        fallback: false
+    }
+};
+
+export default PageLink;

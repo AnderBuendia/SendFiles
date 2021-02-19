@@ -1,7 +1,6 @@
 /* { useCallback or useMemo } to improve app performance */
-import React, { useState, useContext, useCallback } from 'react';
+import React, { useContext, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
-import axiosClient from '../config/axios';
 import appContext from '../context/app/appContext';
 import authContext from '../context/auth/authContext';
 import Form from './Form';
@@ -21,8 +20,6 @@ const Dropzone = () => {
     }
 
     const onDropAccepted = useCallback(async (acceptedFiles) => {
-        // console.log(acceptedFiles);
-
         /* Create form-data */
         const formData = new FormData();
         formData.append('file', acceptedFiles[0]);

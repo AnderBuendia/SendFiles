@@ -29,7 +29,7 @@ const Header = () => {
     return ( 
         <header className="py-8 flex flex-row md:flex-row items-center justify-between"> 
             <img 
-                className="w-64 md:mb-0 cursor-pointer" src="/logo.svg" 
+                className="w-36 md:mb-0 cursor-pointer ml-2" src="/logofiles.png" 
                 onClick={() => redirect()}
             />
 

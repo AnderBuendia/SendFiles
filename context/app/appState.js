@@ -33,7 +33,6 @@ const AppState = ({children}) => {
 
     /* Show an alert */
     const showAlert = msg => {
-        console.log(msg)
         dispatch({
             type: SHOW_ALERT,
             payload: msg
@@ -53,7 +52,6 @@ const AppState = ({children}) => {
         })
         try {
             const res = await axiosClient.post('/api/files', formData);
-            console.log(res.data);
             dispatch({
                 type: UPLOAD_FILE_SUCCESS,
                 payload: {
