@@ -16,7 +16,7 @@ You need to clone the following repository:
 ```
 https://github.com/AnderBuendia/sendfiles-backend.git
 ```
-Then go to the directory and modify the .env.example file:
+Then go to the directory and modify the .env.example file and define the values:
 
 ```
 cd sendfiles-backend
@@ -32,3 +32,25 @@ docker-compose up [-d]
 Go to the web browser and test this at [http://localhost:$PORT](http://localhost:$PORT) and Hello World! must be appears.
 
 ## Frontend
+
+Clone the following repository:
+
+```
+https://github.com/AnderBuendia/sendfiles.git
+```
+
+Then go to the directory and modify the .env.example file and define the values:
+
+```
+cd sendfiles-backend
+mv .env.example .env
+```
+
+Run the following commands and go to the web browser to test this at [http://localhost:$PORT](http://localhost:$PORT):
+
+```
+npm install
+
+npm run dev
+```
+
