@@ -7,7 +7,7 @@ https://send-files-frontend.vercel.app/
 
 ## Using this repository
 
-Before use this repository, you need to install [Docker](https://www.docker.com/get-started) and [Docker Compose](https://docs.docker.com/compose/install/)
+Before use this repository, you need to install [Docker](https://www.docker.com/get-started), [Docker Compose](https://docs.docker.com/compose/install/) and [NodeJS](https://nodejs.org/en/download/) with `npm`. They are multiplatform (Windows, MacOS and Linux).
 
 ## Backend
 
