@@ -1,10 +1,5 @@
 # SendFiles
 
-## About this Repo
-
-You can use this web through the next link:
-https://send-files-frontend.vercel.app/
-
 ## Using this repository
 
 Before use this repository, you need to install [Docker](https://www.docker.com/get-started), [Docker Compose](https://docs.docker.com/compose/install/) and [NodeJS](https://nodejs.org/en/download/) with `npm`. They are multiplatform (Windows, MacOS and Linux).
@@ -21,6 +16,12 @@ Then go to the directory and modify the .env.example file and define the values:
 ```
 cd sendfiles-backend
 mv .env.example .env
+```
+
+Inside `sendfiles-backend`, go to `src/db/db.js` and uncomment the following line:
+
+```
+dbName: process.env.DB_NAME,
 ```
 
 Run docker-compose to build and initialize the server:
@@ -54,3 +55,8 @@ npm install
 npm run dev
 ```
 
+
+Notes
+----
+
+To access website: https://sendfiles.anderb.me
