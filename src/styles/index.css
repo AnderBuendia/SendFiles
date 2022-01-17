@@ -1,0 +1,34 @@
+:root {
+  --fs: 16px;
+  --theme--contrast-0: #121212;
+  --theme-body-bg: #282c34;
+  --theme-body-txt: #f3f3f3;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: var(--theme-body-bg);
+  color: var(--theme-body-txt);
+  font-size: var(--fz);
+  font-family: 'Manrope', arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.link {
+  color: #fff;
+}
