@@ -1,5 +1,11 @@
-import { render } from 'preact';
-import { App } from './pages/_app';
-import './index.css';
+import '@Styles/index.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from '@Pages/_app';
 
-render(<App />, document.getElementById('app')!);
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
