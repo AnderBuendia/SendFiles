@@ -1,10 +1,11 @@
 import '@Styles/App.css';
 import { Route, Switch } from 'wouter';
 import { HelmetProvider } from 'react-helmet-async';
-import Header from '@Components/Header';
-import Home from '@Components/Home';
 import LoginPage from '@Pages/login';
-import { MainPaths } from '@Enums/main-paths.enum';
+import Header from '@Components/Header';
+import Footer from '@Components/Footer';
+import Home from '@Components/Home';
+import { MainPaths } from '@Enums/paths/main-paths.enum';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
               <Route component={LoginPage} path={MainPaths.LOGIN} />
             </Switch>
           </main>
+          <Footer />
         </section>
       </div>
     </HelmetProvider>
