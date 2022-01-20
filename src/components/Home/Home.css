@@ -1,0 +1,5 @@
+.home-container {
+  padding: 10px;
+  background-color: var(--color-primary);
+  border-radius: 6px;
+}
