@@ -26,6 +26,14 @@
   color: #000;
 }
 
+.creator-row > a > span {
+  margin-right: 3px;
+}
+
+.creator-row > a:hover {
+  opacity: 0.6;
+}
+
 .network-links-row > a {
   color: #fff;
   text-decoration: none;

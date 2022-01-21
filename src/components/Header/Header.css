@@ -17,14 +17,25 @@
   height: 40px;
 }
 
-.header-login-button {
+.header-button {
   padding-block: 8px;
   padding-inline: 25px;
   text-decoration: none;
-  background: var(--brand-color_1);
   color: white;
   text-transform: uppercase;
   font-weight: 400;
   font-size: 1rem;
   border-radius: 8px;
+}
+
+.header-button:hover {
+  opacity: 0.6;
+}
+
+.login-color-button {
+  background: var(--brand-color_1);
+}
+
+.logout-color-button {
+  background: var(--brand-color_2);
 }
