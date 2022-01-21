@@ -3,6 +3,8 @@ import '@Components/Footer/Footer.css';
 import { SocialPaths } from '@Enums/paths/social-paths.enum';
 import { CreatorIcon } from '@Components/Icons/creator.icon';
 
+const CREATOR_NAME = 'anderb';
+
 const Footer: FC = () => {
   return (
     <footer className="footer-container">
@@ -11,7 +13,7 @@ const Footer: FC = () => {
           <p>Developed by</p>
 
           <a href={SocialPaths.URL_CREATOR} target="_blank">
-            <span>anderb</span>
+            <span>{CREATOR_NAME}</span>
             <CreatorIcon />
           </a>
         </div>
