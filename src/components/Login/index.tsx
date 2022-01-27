@@ -16,9 +16,10 @@ const Login: FC = () => {
           <SendFilesIcon style="login-icon" />
         </a>
       </Link>
+
       <Auth.UserContextProvider supabaseClient={supabase}>
         <Container>
-          <Auth supabaseClient={supabase} />
+          <Auth supabaseClient={supabase} providers={['github']} />
         </Container>
       </Auth.UserContextProvider>
     </div>

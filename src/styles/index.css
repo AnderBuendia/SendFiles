@@ -23,6 +23,8 @@
   --color-primary: #51617f;
   --brand-color_1: #0271c1;
   --brand-color_2: #7671a0;
+  --brand-color_3: #9abce4;
+  --brand-color_4: #bf9ae4;
 }
 
 html {
@@ -47,4 +49,21 @@ body {
   font-family: 'Nunito', arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.primary-button {
+  padding-block: 10px;
+  padding-inline: 25px;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+}
+
+.primary-button:hover {
+  cursor: pointer;
+  opacity: 0.6;
 }

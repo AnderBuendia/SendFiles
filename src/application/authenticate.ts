@@ -1,7 +1,13 @@
-import { supabase } from '@Services/api';
+import { useAuthentication } from '@Services/authAdapter';
+import { useUserStorage } from '@Services/storageAdapter';
 
 export function useAuthenticate() {
-  const signOut = () => supabase.auth.signOut();
+  const { logoutRequest } = useAuthentication();
+  const { user } = useUserStorage();
 
-  return { signOut };
+  const isLogged = Boolean(user);
+
+  const signOut = () => logoutRequest();
+
+  return { user, isLogged, signOut };
 }
