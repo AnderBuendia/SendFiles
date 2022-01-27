@@ -38,7 +38,7 @@ export const AuthStoreProvider: FC<AuthStoreProviderProps> = ({ children }) => {
     };
   }, []);
 
-  function checkUser() {
+  async function checkUser() {
     const session = supabase.auth.session();
 
     setUser(session?.user ?? null);
@@ -46,7 +46,6 @@ export const AuthStoreProvider: FC<AuthStoreProviderProps> = ({ children }) => {
 
   const value = {
     user,
-    isLogged: Boolean(user),
   };
 
   return (

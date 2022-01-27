@@ -2,7 +2,7 @@ import { useEffect, FC, ReactNode } from 'react';
 import '@Components/Login/Login.css';
 import { useLocation } from 'wouter';
 import { Typography } from '@supabase/ui';
-import { useUserStorage } from '@Services/storageAdapter';
+import { useAuthenticate } from '@Application/authenticate';
 import Spinner from '@Components/generic/Spinner';
 import { MainPaths } from '@Enums/paths/main-paths.enum';
 
@@ -12,7 +12,7 @@ export type ContainerProps = {
 
 const Container: FC<ContainerProps> = ({ children }) => {
   const [_, pushLocation] = useLocation();
-  const { isLogged } = useUserStorage();
+  const { isLogged } = useAuthenticate();
 
   useEffect(() => {
     if (isLogged) pushLocation(MainPaths.INDEX);
