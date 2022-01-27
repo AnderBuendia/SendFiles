@@ -12,6 +12,10 @@
   justify-content: center;
   align-items: center;
   margin: auto;
+  background-color: var(--color-primary);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 3px 1px 1px 1px #3f4b63;
 }
 
 .login-title {
@@ -22,12 +26,14 @@
   justify-content: center;
   text-decoration: none;
   color: #fff;
+  margin-left: 20px;
+  margin-bottom: 1.5rem;
 }
 
 .login-title > span {
   font-weight: 900;
   font-size: 2rem;
-  margin-right: 15px;
+  margin-right: 12px;
 }
 
 .login-icon {
