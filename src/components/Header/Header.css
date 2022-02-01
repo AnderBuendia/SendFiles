@@ -17,6 +17,20 @@
   height: 40px;
 }
 
+.header-authenticated {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header-authenticated > span {
+  margin-right: 10px;
+  background: var(--brand-color_1);
+  padding-inline: 1rem;
+  padding-block: 8px;
+  border-radius: 20px;
+}
+
 .login-color-button {
   background: var(--brand-color_1);
 }

@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
 export type SendFilesIconProps = {
   style: string;
@@ -6,11 +6,6 @@ export type SendFilesIconProps = {
 
 export const SendFilesIcon: FC<SendFilesIconProps> = ({ style }) => {
   return (
-    <img
-      src="/sendfiles-logo.png"
-      loading="lazy"
-      className={style}
-      alt="sendfiles-logo"
-    />
+    <img src="/sendfiles-logo.png" className={style} alt="sendfiles-logo" />
   );
 };
