@@ -12,15 +12,15 @@ const Header: FC = () => {
 
   const renderLoginButtons = ({ isLogged }: { isLogged: boolean }) => {
     return isLogged ? (
-      <>
-        <span>Hello, {user?.email}</span>
+      <div className="header-authenticated">
+        <span>Hi, {user?.email}</span>
         <button
           className="primary-button logout-color-button"
           onClick={() => signOut()}
         >
           <span>Sign Out</span>
         </button>
-      </>
+      </div>
     ) : (
       <Link to={MainPaths.LOGIN}>
         <a className="primary-button login-color-button">

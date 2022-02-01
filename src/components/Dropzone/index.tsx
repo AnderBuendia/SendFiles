@@ -3,13 +3,13 @@ import '@Components/Dropzone/Dropzone.css';
 import { useDropzone } from 'react-dropzone';
 import { useAuthenticate } from '@Application/authenticate';
 import { useUploadFiles } from '@Application/file/uploadFiles';
-import { getFilenameExtension } from '@Lib/utils/file-extension.utils';
 import ListFiles from '@Components/Dropzone/ListFiles';
-import CreateLinkForm from '@Components/Dropzone/CreateLinkForm';
+import CreateLinkForm from '@Components/Forms/CreateLinkForm';
 import { FileSize } from '@Enums/file/file.enum';
 
 const Dropzone: FC = () => {
   const [uploading, setUploading] = useState<boolean>(false);
+  const [uploaded, setUploaded] = useState<string | null>(null);
   const { isLogged } = useAuthenticate();
   const { uploadFiles } = useUploadFiles();
   const maxSize = isLogged ? FileSize.IS_LOGGED : FileSize.DEFAULT;
@@ -17,9 +17,13 @@ const Dropzone: FC = () => {
   const onDrop = useCallback(
     async (files) => {
       const [file] = files;
-      const extension = getFilenameExtension(file.name);
 
-      const fileUrl = await uploadFiles(file, extension);
+      setUploading(true);
+      const uploadedFilename = await uploadFiles(file);
+
+      setUploading(false);
+
+      if (uploadedFilename) setUploaded(uploadedFilename);
     },
     [uploadFiles]
   );
@@ -30,31 +34,32 @@ const Dropzone: FC = () => {
       maxSize,
     });
 
-  const dropContainer =
-    acceptedFiles && acceptedFiles.length > 0 ? (
-      <>
-        <ListFiles files={acceptedFiles} />
-        {isLogged && <CreateLinkForm files={acceptedFiles} />}
-      </>
-    ) : (
-      <div className="form-container">
-        <p>Drag and drop files</p>
-        <button className="primary-button">Select files to upload</button>
-      </div>
-    );
-
   return (
     <div className="dropzone-container">
-      <div className="drop-container" {...getRootProps()}>
-        <input {...getInputProps()} />
-        {isDragActive && (
-          <div className="form-container">
+      {acceptedFiles && acceptedFiles.length > 0 ? (
+        <>
+          {uploading ? (
+            <p> Uploading Files...</p>
+          ) : (
+            <>
+              <ListFiles files={acceptedFiles} />
+              <CreateLinkForm uploadedFiles={uploaded} />
+            </>
+          )}
+        </>
+      ) : (
+        <div className="drop-container" {...getRootProps()}>
+          <input {...getInputProps()} />
+          {isDragActive ? (
             <p>Drop file</p>
-          </div>
-        )}
-
-        {uploading ? <p>Uploading File...</p> : dropContainer}
-      </div>
+          ) : (
+            <>
+              <p>Drag and drop files</p>
+              <button className="primary-button">Select files to upload</button>
+            </>
+          )}
+        </div>
+      )}
     </div>
   );
 };

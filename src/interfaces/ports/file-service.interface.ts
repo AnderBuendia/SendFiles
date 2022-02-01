@@ -1,9 +1,6 @@
 export interface FileService {
-  uploadFileRequest: ({
-    file,
-    extension,
-  }: {
-    file: string;
-    extension: string;
-  }) => Promise<string | undefined>;
+  uploadFileRequest: ({ file }: { file: File }) => Promise<{
+    uploadedFilename: string;
+    error: Error | null;
+  }>;
 }

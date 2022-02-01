@@ -1,0 +1,37 @@
+.url-container {
+  background: var(--color-secondary);
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.url-container > p {
+  font-weight: 700;
+}
+
+.link-container {
+  position: relative;
+}
+
+.link-container > pre {
+  overflow: auto;
+  padding: 1rem;
+  background: var(--color-primary);
+  border-radius: 6px;
+}
+
+.copy-button {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 8px;
+}
+
+.link-container:hover .copy-button {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.copy-button:hover {
+  cursor: pointer;
+}
