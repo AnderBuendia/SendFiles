@@ -3,3 +3,25 @@
   background-color: var(--color-primary);
   border-radius: 6px;
 }
+
+.summary-container {
+  text-align: left;
+  background: var(--color-secondary);
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: 6px;
+}
+
+.summary-container > h4 {
+  color: var(--brand-color_2);
+  font-size: 1.4rem;
+  font-weight: 900;
+  margin: 6px 0;
+}
+
+.summary-container > a {
+  color: var(--brand-color_4);
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 700;
+}

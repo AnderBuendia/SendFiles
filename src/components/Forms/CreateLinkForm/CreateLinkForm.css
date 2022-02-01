@@ -1,0 +1,28 @@
+.create-link-form-container {
+  width: 100%;
+  text-align: center;
+}
+
+.create-link-form-container > form {
+  width: 70%;
+  margin: auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 8px;
+}
+
+.label-group {
+  margin-right: 8px;
+}
+
+.create-link-button {
+  background: var(--brand-color_3);
+  width: 100%;
+  margin-top: 1rem;
+}
+
+input[type='password'] {
+  width: 100%;
+}

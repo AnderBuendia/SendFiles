@@ -1,24 +1,26 @@
 .dropzone-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 2px dashed #fff;
+  border: 4px dashed lightgray;
   border-radius: 4px;
   min-height: 30vh;
+  padding: 1rem;
+  background: var(--color-secondary);
 }
 
 .drop-container {
   height: 200px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.form-container > p {
+.drop-container > p {
   font-weight: 700;
   font-size: 1.2rem;
 }
 
-.form-container > button {
+.drop-container > button {
   padding-inline: 60px;
   padding-block: 10px;
   background: var(--brand-color_3);
@@ -26,7 +28,8 @@
   border: none;
 }
 
-.form-container > h4 {
+.form-container > p {
+  font-weight: 700;
   margin-bottom: 0px;
   font-size: 1.2rem;
 }

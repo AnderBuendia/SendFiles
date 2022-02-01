@@ -1,13 +1,14 @@
 .App {
   text-align: center;
+  width: 100%;
 }
 
 .App-content {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  width: 85%;
   min-height: 100vh;
-  padding: 22px;
+  display: inline-block;
+  margin: 0 auto;
+  padding-block: 1rem;
 }
 
 .App-main {

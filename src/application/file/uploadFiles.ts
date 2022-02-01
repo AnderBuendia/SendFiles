@@ -4,13 +4,15 @@ import { AlertMessages } from '@Enums/config/messages.enum';
 export function useUploadFiles() {
   const { uploadFileRequest } = useFile();
 
-  const uploadFiles = async (file: string, extension: string) => {
+  const uploadFiles = async (file: File) => {
     try {
       if (!file) throw new Error(AlertMessages.MAX_FILE_SIZE);
 
-      const fileUrl = uploadFileRequest({ file, extension });
+      const { uploadedFilename, error } = await uploadFileRequest({ file });
 
-      return fileUrl;
+      if (error) throw new Error(error.message);
+
+      return uploadedFilename;
     } catch (error: any) {
       if (error instanceof Error) {
         console.log(error);
