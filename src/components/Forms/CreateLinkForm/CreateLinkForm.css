@@ -1,9 +1,9 @@
-.create-link-form-container {
+.create-link-form {
   width: 100%;
   text-align: center;
 }
 
-.create-link-form-container > form {
+.create-link-form > form {
   width: 70%;
   margin: auto;
   text-align: left;
@@ -21,8 +21,4 @@
   background: var(--brand-color_3);
   width: 100%;
   margin-top: 1rem;
-}
-
-input[type='password'] {
-  width: 100%;
 }

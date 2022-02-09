@@ -7,7 +7,7 @@ const CREATOR_NAME = 'anderb';
 
 const Footer: FC = () => {
   return (
-    <footer className="footer-container">
+    <footer className="footer">
       <div className="footer-content">
         <div className="creator-row">
           <p>Developed by</p>

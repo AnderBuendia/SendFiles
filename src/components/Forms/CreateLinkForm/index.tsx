@@ -1,15 +1,16 @@
-import { FC, useState, FormEvent, ChangeEvent } from 'react';
+import type { FC, FormEvent, ChangeEvent } from 'react';
 import '@Components/Forms/CreateLinkForm/CreateLinkForm.css';
-import { useAuthenticate } from '@Application/authenticate';
-import { useCreateLink } from '@Application/link/createLink';
-import { NumberOfDownloads } from '@Enums/file/downloads.enum';
 import { useForm } from '@Components/Forms/CreateLinkForm/state/hook';
+import { useAuthenticate } from '@Application/authenticate';
+import { useGenerateDownloadLink } from '@Application/link/generateDownloadLink';
+import { NumberOfDownloads } from '@Enums/file/downloads.enum';
+import type { UploadFile } from '@Interfaces/domain/file.interface';
 
 export type CreateLinkFormProps = {
-  uploadedFiles: string | null;
+  files: UploadFile[];
 };
 
-const CreateLinkForm: FC<CreateLinkFormProps> = ({ uploadedFiles }) => {
+const CreateLinkForm: FC<CreateLinkFormProps> = ({ files }) => {
   const {
     hasPassword,
     password,
@@ -19,7 +20,7 @@ const CreateLinkForm: FC<CreateLinkFormProps> = ({ uploadedFiles }) => {
     addDownloads,
   } = useForm();
   const { isLogged } = useAuthenticate();
-  const { createLink } = useCreateLink();
+  const { generateDownloadLink } = useGenerateDownloadLink();
 
   const handleChangeHasPassword = () => {
     changeHasPassword({ hasPassword: !hasPassword });
@@ -36,16 +37,11 @@ const CreateLinkForm: FC<CreateLinkFormProps> = ({ uploadedFiles }) => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const parseDownloads = parseInt(downloads);
-    console.log({ downloads, password, uploadedFiles });
-
-    createLink({ uploadedFiles, downloads: parseDownloads, password });
+    generateDownloadLink({ files, downloads, password });
   };
 
-  console.log({ uploadedFiles });
-
   return (
-    <div className="create-link-form-container">
+    <div className="create-link-form">
       <form onSubmit={handleSubmit}>
         {isLogged && (
           <>
