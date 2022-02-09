@@ -1,4 +1,4 @@
-.dropzone-container {
+.dropzone {
   border: 4px dashed lightgray;
   border-radius: 4px;
   min-height: 30vh;
@@ -6,7 +6,7 @@
   background: var(--color-secondary);
 }
 
-.drop-container {
+.drop {
   height: 200px;
   padding: 20px;
   display: flex;
@@ -15,12 +15,12 @@
   justify-content: center;
 }
 
-.drop-container > p {
+.drop > p {
   font-weight: 700;
   font-size: 1.2rem;
 }
 
-.drop-container > button {
+.drop > button {
   padding-inline: 60px;
   padding-block: 10px;
   background: var(--brand-color_3);
@@ -28,13 +28,13 @@
   border: none;
 }
 
-.form-container > p {
+.form > p {
   font-weight: 700;
   margin-bottom: 0px;
   font-size: 1.2rem;
 }
 
-.list-container {
+.list {
   padding-inline: 20px;
   display: flex;
   flex-direction: column;
@@ -45,12 +45,12 @@
   text-align: center;
 }
 
-.file-container {
+.file {
   padding-inline: 70px;
   background: var(--brand-color_4);
   border-radius: 6px;
 }
 
-.file-container > p {
+.file > p {
   margin: 0.2rem;
 }

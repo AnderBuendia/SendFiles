@@ -1,41 +1,49 @@
 import { supabase } from '@Services/api';
-import { useUserStorage } from '@Services/storageAdapter';
-import { getFilename } from '@Lib/utils/file.utils';
+import type { Link } from '@Interfaces/domain/link.interface';
 import type { LinkService } from '@Interfaces/ports/link-service.interface';
 
-const WEB_URL = import.meta.env.VITE_FRONTEND_URL;
-
+// SET UP CREATE LINK REQUEST
 export function useLink(): LinkService {
-  const { user } = useUserStorage();
+  const getLinkRequest = async ({ url_query }: { url_query: string }) => {
+    const { data, error } = await supabase
+      .from('links')
+      .select()
+      .eq(`url_query`, url_query);
 
-  const createLinkRequest = async ({
-    uploadedFiles,
-    downloads,
-    password,
-  }: {
-    uploadedFiles: string;
-    downloads: number;
-    password: string;
-  }) => {
-    const filename = getFilename(uploadedFiles);
-
-    const { data, error } = await supabase.from('files').insert([
-      {
-        author: user && user.id,
-        name: uploadedFiles,
-        downloads,
-        password: password && password,
-        url: filename,
-      },
-    ]);
-
-    console.log({ data, error });
-
-    const fileUrl =
-      data && data[0].url ? `${WEB_URL}download/${data[0].url}` : '';
-
-    return { fileUrl, error };
+    return { data, error };
   };
 
-  return { createLinkRequest };
+  const generateDownloadLinkRequest = async ({ link }: { link: Link }) => {
+    const { data, error } = await supabase.from('links').insert([link]);
+
+    const hasData = Boolean(data);
+
+    console.log({ data, hasData });
+    return { hasData, error };
+  };
+
+  const updateLinkRequest = async ({ updatedLink }: { updatedLink: Link }) => {
+    const { data, error } = await supabase
+      .from('links')
+      .update(updatedLink)
+      .match({ url_query: updatedLink.url_query });
+
+    return { error };
+  };
+
+  const deleteLinkRequest = async ({ url_query }: { url_query: string }) => {
+    const { data, error } = await supabase
+      .from('links')
+      .delete()
+      .match({ url_query });
+
+    return { error };
+  };
+
+  return {
+    getLinkRequest,
+    generateDownloadLinkRequest,
+    updateLinkRequest,
+    deleteLinkRequest,
+  };
 }

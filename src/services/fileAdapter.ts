@@ -1,22 +1,39 @@
-import { v4 as uuidv4 } from 'uuid';
 import { supabase } from '@Services/api';
-import { getFilenameExtension } from '@Lib/utils/file.utils';
-import { FileService } from '@Interfaces/ports/file-service.interface';
+import type { FileService } from '@Interfaces/ports/file-service.interface';
+import type { DropzoneFile } from '@Interfaces/domain/file.interface';
 
 export function useFile(): FileService {
-  const uploadFileRequest = async ({ file }: { file: File }) => {
-    const extension = getFilenameExtension(file.name);
-    const filename = `${uuidv4()}`;
-
+  const uploadFileRequest = async ({
+    file,
+    filename,
+  }: {
+    file: DropzoneFile;
+    filename: string;
+  }) => {
     const { data, error } = await supabase.storage
       .from('files')
-      .upload(`uploads/${filename}.${extension}`, file);
+      .upload(`uploads/${filename}`, file);
 
-    const uploadedFilename = data?.Key ? filename : '';
+    const hasData = Boolean(data?.Key);
 
-    console.log({ uploadedFilename, data });
-    return { uploadedFilename, error };
+    return { hasData, error };
   };
 
-  return { uploadFileRequest };
+  const downloadFileRequest = async ({ filename }: { filename: string }) => {
+    const { data, error } = await supabase.storage
+      .from('files')
+      .download(`uploads/${filename}`);
+
+    return { data, error };
+  };
+
+  const deleteFileRequest = async ({ filename }: { filename: string }) => {
+    const { error } = await supabase.storage
+      .from('files')
+      .remove([`uploads/${filename}`]);
+
+    return { error };
+  };
+
+  return { uploadFileRequest, downloadFileRequest, deleteFileRequest };
 }

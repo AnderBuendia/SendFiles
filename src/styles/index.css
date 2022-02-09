@@ -47,7 +47,7 @@ body {
   margin: 0;
   background: var(--theme-body-bg);
   color: var(--theme-body-txt);
-  font-size: var(--fz);
+  font-size: var(--fs);
   font-family: 'Nunito', arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -62,6 +62,10 @@ input {
 
 select:hover {
   cursor: pointer;
+}
+
+h4 {
+  margin: 0;
 }
 
 .primary-button {
