@@ -3,6 +3,6 @@ export enum FileSize {
   DEFAULT = 1_000_000,
 }
 
-export enum UnitSize {
-  megabytes = 2,
+export enum UnitFileSize {
+  MEGABYTES = 2,
 }

@@ -7,10 +7,18 @@ import {
   Dispatch,
   SetStateAction,
 } from 'react';
+import type { Link } from '@Interfaces/domain/link.interface';
+import type { UploadFile } from '@Interfaces/domain/file.interface';
 
 export type AppStoreContextType = {
-  urlFile: string | null;
-  setUrlFile: Dispatch<SetStateAction<string | null>>;
+  uploadedFiles: UploadFile[];
+  link: Link | null;
+  urlDownloadFile: string | null;
+  loading: boolean;
+  setUploadedFiles: Dispatch<SetStateAction<UploadFile[]>>;
+  setLink: Dispatch<SetStateAction<Link | null>>;
+  setUrlDownloadFile: Dispatch<SetStateAction<string | null>>;
+  setLoading: Dispatch<SetStateAction<boolean>>;
 };
 
 export type AppStoreProviderProps = {
@@ -18,18 +26,33 @@ export type AppStoreProviderProps = {
 };
 
 const AppStoreContext = createContext<AppStoreContextType>({
-  urlFile: null,
-  setUrlFile: () => {},
+  uploadedFiles: [],
+  link: null,
+  urlDownloadFile: null,
+  loading: false,
+  setUploadedFiles: () => {},
+  setLink: () => {},
+  setUrlDownloadFile: () => {},
+  setLoading: () => {},
 });
 
 export const useAppStore = () => useContext(AppStoreContext);
 
 export const AppStoreProvider: FC<AppStoreProviderProps> = ({ children }) => {
-  const [urlFile, setUrlFile] = useState<string | null>(null);
+  const [uploadedFiles, setUploadedFiles] = useState<UploadFile[]>([]);
+  const [link, setLink] = useState<Link | null>(null);
+  const [urlDownloadFile, setUrlDownloadFile] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const value = {
-    urlFile,
-    setUrlFile,
+    uploadedFiles,
+    link,
+    urlDownloadFile,
+    loading,
+    setUploadedFiles,
+    setLink,
+    setUrlDownloadFile,
+    setLoading,
   };
 
   return (

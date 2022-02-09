@@ -33,7 +33,7 @@ const App: FC = () => {
                   </Switch>
                 </main>
               </AppStoreProvider>
-              {match || <Footer />}
+              <Footer />
             </section>
           </Suspense>
         </div>

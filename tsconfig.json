@@ -19,6 +19,7 @@
     "paths": {
       "@Application/*": ["src/application/*"],
       "@Components/*": ["src/components/*"],
+      "@Domain/*": ["src/domain/*"],
       "@Pages/*": ["src/pages/*"],
       "@Lib/*": ["src/lib/*"],
       "@Styles/*": ["src/styles/*"],

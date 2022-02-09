@@ -1,31 +1,28 @@
-import { FC, useState, useCallback } from 'react';
+import { FC, useCallback } from 'react';
 import '@Components/Dropzone/Dropzone.css';
 import { useDropzone } from 'react-dropzone';
 import { useAuthenticate } from '@Application/authenticate';
-import { useUploadFiles } from '@Application/file/uploadFiles';
+import { useUploadFile } from '@Application/file/uploadFile';
+import { useFileStorage } from '@Services/storageAdapter';
 import ListFiles from '@Components/Dropzone/ListFiles';
 import CreateLinkForm from '@Components/Forms/CreateLinkForm';
 import { FileSize } from '@Enums/file/file.enum';
 
 const Dropzone: FC = () => {
-  const [uploading, setUploading] = useState<boolean>(false);
-  const [uploaded, setUploaded] = useState<string | null>(null);
   const { isLogged } = useAuthenticate();
-  const { uploadFiles } = useUploadFiles();
+  const { uploadFile } = useUploadFile();
+  const { uploadedFiles, loading, setLoading } = useFileStorage();
   const maxSize = isLogged ? FileSize.IS_LOGGED : FileSize.DEFAULT;
 
   const onDrop = useCallback(
     async (files) => {
       const [file] = files;
 
-      setUploading(true);
-      const uploadedFilename = await uploadFiles(file);
-
-      setUploading(false);
-
-      if (uploadedFilename) setUploaded(uploadedFilename);
+      setLoading(true);
+      await uploadFile(file);
+      setLoading(false);
     },
-    [uploadFiles]
+    [uploadFile]
   );
 
   const { isDragActive, acceptedFiles, getRootProps, getInputProps } =
@@ -35,20 +32,20 @@ const Dropzone: FC = () => {
     });
 
   return (
-    <div className="dropzone-container">
-      {acceptedFiles && acceptedFiles.length > 0 ? (
+    <div className="dropzone">
+      {uploadedFiles && uploadedFiles.length > 0 ? (
         <>
-          {uploading ? (
+          {loading ? (
             <p> Uploading Files...</p>
           ) : (
             <>
               <ListFiles files={acceptedFiles} />
-              <CreateLinkForm uploadedFiles={uploaded} />
+              <CreateLinkForm files={uploadedFiles} />
             </>
           )}
         </>
       ) : (
-        <div className="drop-container" {...getRootProps()}>
+        <div className="drop" {...getRootProps()}>
           <input {...getInputProps()} />
           {isDragActive ? (
             <p>Drop file</p>

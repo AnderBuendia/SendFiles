@@ -9,7 +9,7 @@ import { MainPaths } from '@Enums/paths/main-paths.enum';
 
 const Login: FC = () => {
   return (
-    <div className="login-form">
+    <div className="App-wrapper">
       <Link to={MainPaths.INDEX}>
         <a className="login-title">
           <span>Sendfiles</span>
