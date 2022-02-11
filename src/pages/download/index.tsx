@@ -23,7 +23,6 @@ const DownloadPage: FC<DownloadPageProps> = ({ params }) => {
   const { urlDownloadFile } = useFileStorage();
   const { link, loading, setLink, setLoading } = useLinkStorage();
 
-  console.log({ password: !link?.password });
   useEffect(() => {
     fetchLink(params.id);
   }, [params.id]);

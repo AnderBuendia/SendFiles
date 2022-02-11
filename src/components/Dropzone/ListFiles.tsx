@@ -7,7 +7,6 @@ export type ListFiles = {
 };
 
 const ListFiles: FC<ListFiles> = ({ files }) => {
-  console.log({ files });
   return (
     <div className="form">
       <p className="h3">Files</p>

@@ -2,7 +2,6 @@ import { supabase } from '@Services/api';
 import type { Link } from '@Interfaces/domain/link.interface';
 import type { LinkService } from '@Interfaces/ports/link-service.interface';
 
-// SET UP CREATE LINK REQUEST
 export function useLink(): LinkService {
   const getLinkRequest = async ({ url_query }: { url_query: string }) => {
     const { data, error } = await supabase
@@ -18,7 +17,6 @@ export function useLink(): LinkService {
 
     const hasData = Boolean(data);
 
-    console.log({ data, hasData });
     return { hasData, error };
   };
 

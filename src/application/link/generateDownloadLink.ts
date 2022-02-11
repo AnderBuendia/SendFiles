@@ -39,8 +39,6 @@ export function useGenerateDownloadLink() {
 
       const { hasData, error } = await generateDownloadLinkRequest({ link });
 
-      console.log({ hasData, link });
-
       if (error) throw new Error(error.message);
       else if (hasData) setLink(link);
     } catch (error: any) {
