@@ -41,47 +41,48 @@ const CreateLinkForm: FC<CreateLinkFormProps> = ({ files }) => {
   };
 
   return (
-    <div className="create-link-form">
-      <form onSubmit={handleSubmit}>
-        {isLogged && (
-          <>
-            <div className="form-group">
-              <label className="label-group" htmlFor="downloads">
-                Delete after:
-              </label>
-              <select id="downloads" onChange={handleChangeDownloads}>
-                <option disabled>-- Number of Downloads --</option>
-                {Object.values(NumberOfDownloads).map((download) => (
-                  <option value={download} key={download}>
-                    {download} Downloads
-                  </option>
-                ))}
-              </select>
-            </div>
+    <form className="create-link-form-wrapper" onSubmit={handleSubmit}>
+      {isLogged && (
+        <>
+          <div className="form-group">
+            <label className="label-group" htmlFor="downloads">
+              Delete after:
+            </label>
+            <select
+              className="select"
+              id="downloads"
+              onChange={handleChangeDownloads}
+            >
+              <option disabled>-- Number of Downloads --</option>
+              {Object.values(NumberOfDownloads).map((download) => (
+                <option value={download} key={download}>
+                  {download} Downloads
+                </option>
+              ))}
+            </select>
+          </div>
 
-            <div className="form-group">
-              <label className="label-group" htmlFor="password">
-                Password protect
-              </label>
-              <input type="checkbox" onChange={handleChangeHasPassword} />
-            </div>
+          <div className="form-group">
+            <label className="label-group" htmlFor="password">
+              Password protect
+            </label>
+            <input type="checkbox" onChange={handleChangeHasPassword} />
+          </div>
 
-            {hasPassword && (
-              <input
-                value={password ? password : ''}
-                id="password"
-                type="password"
-                onChange={handleChangePassword}
-              />
-            )}
-          </>
-        )}
+          {hasPassword && (
+            <input
+              className="input-text"
+              value={password ? password : ''}
+              id="password"
+              type="password"
+              onChange={handleChangePassword}
+            />
+          )}
+        </>
+      )}
 
-        <button className="primary-button create-link-button">
-          Create Link
-        </button>
-      </form>
-    </div>
+      <button className="primary-button">Create Link</button>
+    </form>
   );
 };
 

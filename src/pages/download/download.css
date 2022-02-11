@@ -1,39 +1,21 @@
-.download {
-  background: var(--color-secondary);
+.download-wrapper {
+  background: var(--bg-300);
   border-radius: 6px;
-  padding: 12px;
+  padding: 18px;
 }
 
-.download > h4 {
+.download-wrapper > h3 {
+  margin: auto;
   margin-bottom: 20px;
 }
 
-.download-button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  color: white;
+.secondary-button > a {
   text-decoration: none;
-  text-transform: uppercase;
-  background: var(--brand-color_2);
-}
-
-.download-button > a {
-  padding-block: 10px;
-  padding-inline: 85px;
-}
-
-.download-button:hover {
-  opacity: 0.6;
-}
-
-.download > button {
-  width: 100%;
-  background: var(--brand-color_2);
+  color: #fff;
 }
 
 .confirm-password-wrapper {
-  background: var(--color-secondary);
+  background: var(--bg-300);
   border-radius: 6px;
   padding: 12px;
   display: flex;
@@ -54,8 +36,4 @@
 
 .confirm-password-wrapper > form > input {
   margin-block: 1rem;
-}
-
-.confirm-password-wrapper > form > button {
-  background: var(--brand-color_3);
 }

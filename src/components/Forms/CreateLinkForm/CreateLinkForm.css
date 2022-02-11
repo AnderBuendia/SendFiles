@@ -1,24 +1,17 @@
-.create-link-form {
-  width: 100%;
-  text-align: center;
-}
-
-.create-link-form > form {
+.create-link-form-wrapper {
   width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: auto;
-  text-align: left;
-}
-
-.form-group {
-  margin-bottom: 8px;
 }
 
 .label-group {
   margin-right: 8px;
 }
 
-.create-link-button {
-  background: var(--brand-color_3);
-  width: 100%;
-  margin-top: 1rem;
+.create-link-form-wrapper > button {
+  margin-top: 8px;
+  width: 200px;
 }
