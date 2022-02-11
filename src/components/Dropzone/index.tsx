@@ -30,7 +30,6 @@ const Dropzone: FC = () => {
     maxSize,
   });
 
-  console.log({ uploadedFiles });
   return (
     <div className="dropzone">
       {uploadedFiles && uploadedFiles.length > 0 ? (
