@@ -1,9 +1,5 @@
-.loading {
+.loading-wrapper {
   padding: 12px;
-  background: var(--color-secondary);
+  background: var(--bg-300);
   border-radius: 6px;
-}
-
-.loading > h4 {
-  margin: 0;
 }

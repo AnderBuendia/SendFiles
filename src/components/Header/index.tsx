@@ -14,16 +14,13 @@ const Header: FC = () => {
     return isLogged ? (
       <div className="header-authenticated">
         <span>Hi, {user?.email}</span>
-        <button
-          className="primary-button logout-color-button"
-          onClick={() => signOut()}
-        >
+        <button className="secondary-button" onClick={() => signOut()}>
           <span>Sign Out</span>
         </button>
       </div>
     ) : (
       <Link to={MainPaths.LOGIN}>
-        <a className="primary-button login-color-button">
+        <a className="primary-button">
           <span>Sign In</span>
         </a>
       </Link>

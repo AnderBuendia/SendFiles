@@ -1,0 +1,38 @@
+.primary-button,
+.secondary-button {
+  padding-block: 10px;
+  padding-inline: 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 400;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+}
+
+.primary-button {
+  background: var(--primary-500);
+}
+
+.secondary-button {
+  background: var(--secondary-500);
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.select {
+  margin-block: 8px;
+}
+
+.input-text {
+  width: 312px;
+  height: 24px;
+  margin-block: 6px;
+  border: none;
+  border-radius: 6px;
+}

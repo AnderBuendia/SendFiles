@@ -25,16 +25,8 @@
 
 .header-authenticated > span {
   margin-right: 10px;
-  background: var(--brand-color_1);
+  background: var(--primary-700);
   padding-inline: 1rem;
   padding-block: 8px;
   border-radius: 20px;
-}
-
-.login-color-button {
-  background: var(--brand-color_1);
-}
-
-.logout-color-button {
-  background: var(--brand-color_2);
 }

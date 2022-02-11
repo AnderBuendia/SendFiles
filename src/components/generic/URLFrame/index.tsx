@@ -12,9 +12,9 @@ const URLFrame: FC<URLFrameProps> = ({ url }) => {
   };
 
   return (
-    <div className="url-container">
-      <p>Your URL is:</p>
-      <div className="link-container">
+    <div className="url-wrapper">
+      <p className="h3">Your URL is:</p>
+      <div className="link-wrapper">
         <pre>
           <code>{url}</code>
         </pre>

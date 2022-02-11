@@ -1,21 +1,21 @@
-.url-container {
-  background: var(--color-secondary);
+.url-wrapper {
+  background: var(--bg-300);
   padding: 12px;
   border-radius: 6px;
 }
 
-.url-container > p {
+.url-wrapper > p {
   font-weight: 700;
 }
 
-.link-container {
+.link-wrapper {
   position: relative;
 }
 
-.link-container > pre {
+.link-wrapper > pre {
   overflow: auto;
   padding: 1rem;
-  background: var(--color-primary);
+  background: var(--black);
   border-radius: 6px;
 }
 
@@ -27,7 +27,7 @@
   margin-top: 8px;
 }
 
-.link-container:hover .copy-button {
+.link-wrapper:hover .copy-button {
   display: inline-block;
   margin-right: 5px;
 }
