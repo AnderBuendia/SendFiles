@@ -3,7 +3,7 @@
   border-radius: 4px;
   min-height: 30vh;
   padding: 1rem;
-  background: var(--color-secondary);
+  background: var(--bg-300);
 }
 
 .drop {
@@ -15,25 +15,6 @@
   justify-content: center;
 }
 
-.drop > p {
-  font-weight: 700;
-  font-size: 1.2rem;
-}
-
-.drop > button {
-  padding-inline: 60px;
-  padding-block: 10px;
-  background: var(--brand-color_3);
-  text-transform: none;
-  border: none;
-}
-
-.form > p {
-  font-weight: 700;
-  margin-bottom: 0px;
-  font-size: 1.2rem;
-}
-
 .list {
   padding-inline: 20px;
   display: flex;
@@ -42,15 +23,15 @@
   align-items: center;
   list-style-type: none;
   font-weight: bold;
-  text-align: center;
 }
 
 .file {
-  padding-inline: 70px;
-  background: var(--brand-color_4);
+  width: 160px;
+  background: var(--secondary-300);
   border-radius: 6px;
+  margin: 4px;
 }
 
 .file > p {
-  margin: 0.2rem;
+  margin: 10px;
 }

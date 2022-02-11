@@ -10,7 +10,7 @@ const Loading: FC = () => {
         <title>Loading...</title>
       </Helmet>
       <div className="App-wrapper">
-        <div className="loading">
+        <div className="loading-wrapper">
           <h4>Checking files...</h4>
           <Spinner />
         </div>

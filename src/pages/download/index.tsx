@@ -32,7 +32,7 @@ const DownloadPage: FC<DownloadPageProps> = ({ params }) => {
     setLoading(true);
     const response = await getLink(id);
 
-    if (response) {
+    if (response && response.data) {
       const { data } = response;
       const hasPassword = Boolean(!data.password);
 
@@ -49,8 +49,6 @@ const DownloadPage: FC<DownloadPageProps> = ({ params }) => {
   async function fetchDownloadFile(filename: string) {
     await downloadFile(filename);
   }
-
-  console.log({ link, passwordVerified, urlDownloadFile });
 
   const handleSubmitConfirmPassword = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -77,30 +75,29 @@ const DownloadPage: FC<DownloadPageProps> = ({ params }) => {
       <div className="App-wrapper">
         {link?.password && !passwordVerified ? (
           <div className="confirm-password-wrapper">
-            <h4>Introduce password to download files</h4>
+            <p className="h3">Introduce password to download files</p>
             <form
               className="confirm-password-form"
               onSubmit={handleSubmitConfirmPassword}
             >
               <label htmlFor="confirmpassword">Password</label>
               <input
+                className="input-text"
                 id="confirmpassword"
                 name="confirmpassword"
                 type="password"
               />
-              <button className="primary-button">
+              <button className="secondary-button">
                 <span>Confirm Password</span>
               </button>
             </form>
           </div>
         ) : (
-          <div className="download">
-            <h4>Download your files</h4>
-
+          <div className="download-wrapper">
+            <p className="h3">Download your files</p>
             {urlDownloadFile ? (
-              <div className="download-button">
+              <div className="secondary-button">
                 <a
-                  className="download-button"
                   download
                   href={urlDownloadFile}
                   onClick={handleClickUpdateLink}
@@ -109,7 +106,7 @@ const DownloadPage: FC<DownloadPageProps> = ({ params }) => {
                 </a>
               </div>
             ) : (
-              <button className="primary-button" disabled>
+              <button className="secondary-button" disabled>
                 <span>Download Files</span>
               </button>
             )}

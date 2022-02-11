@@ -1,22 +1,21 @@
 import { FC } from 'react';
 import { getUnitFileSize } from '@Lib/utils/file.utils';
-import type { DropzoneFile } from '@Interfaces/domain/file.interface';
+import type { UploadFile } from '@Interfaces/domain/file.interface';
 
 export type ListFiles = {
-  files: DropzoneFile[];
+  files: UploadFile[];
 };
 
 const ListFiles: FC<ListFiles> = ({ files }) => {
+  console.log({ files });
   return (
     <div className="form">
-      <p>Files</p>
+      <p className="h3">Files</p>
       <ul className="list">
         {files.map((file) => (
           <li key={file.lastModified} className="file">
-            <p>{file.path}</p>
-            <p className="text-sm text-gray-500">
-              {getUnitFileSize(file.size)} MB
-            </p>
+            <p className="small">{file.original_name}</p>
+            <p className="small">{getUnitFileSize(file.size)} MB</p>
           </li>
         ))}
       </ul>

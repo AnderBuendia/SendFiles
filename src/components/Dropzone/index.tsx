@@ -25,21 +25,21 @@ const Dropzone: FC = () => {
     [uploadFile]
   );
 
-  const { isDragActive, acceptedFiles, getRootProps, getInputProps } =
-    useDropzone({
-      onDrop,
-      maxSize,
-    });
+  const { isDragActive, getRootProps, getInputProps } = useDropzone({
+    onDrop,
+    maxSize,
+  });
 
+  console.log({ uploadedFiles });
   return (
     <div className="dropzone">
       {uploadedFiles && uploadedFiles.length > 0 ? (
         <>
           {loading ? (
-            <p> Uploading Files...</p>
+            <p className="normal-bold"> Uploading Files...</p>
           ) : (
             <>
-              <ListFiles files={acceptedFiles} />
+              <ListFiles files={uploadedFiles} />
               <CreateLinkForm files={uploadedFiles} />
             </>
           )}
@@ -51,8 +51,10 @@ const Dropzone: FC = () => {
             <p>Drop file</p>
           ) : (
             <>
-              <p>Drag and drop files</p>
-              <button className="primary-button">Select files to upload</button>
+              <p className="normal-bold">Drag and drop files</p>
+              <button className="secondary-button">
+                Select files to upload
+              </button>
             </>
           )}
         </div>

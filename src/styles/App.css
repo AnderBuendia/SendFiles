@@ -16,7 +16,7 @@
 .App-main {
   display: flex;
   flex-direction: column;
-  background-color: var(--color-primary);
+  background-color: var(--bg-500);
   margin-top: 20px;
   margin-bottom: 20px;
   border-radius: 6px;
@@ -25,7 +25,6 @@
 }
 
 .App-wrapper {
-  width: 100%;
-  padding: 1.3rem;
+  width: 92%;
   margin: auto;
 }
