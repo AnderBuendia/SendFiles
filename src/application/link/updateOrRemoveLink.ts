@@ -29,8 +29,6 @@ export function useUpdateOrRemoveLink() {
         updatedLink.total_downloads
       );
 
-      console.log({ updatedLink, reachLimitDownloads });
-
       if (reachLimitDownloads) {
         const data = await Promise.any([
           deleteFileRequest({ filename: updatedLink.name }),
@@ -40,7 +38,6 @@ export function useUpdateOrRemoveLink() {
         ]);
 
         setUrlDownloadFile(null);
-        console.log(data);
       } else {
         await updateLinkRequest({ updatedLink });
       }

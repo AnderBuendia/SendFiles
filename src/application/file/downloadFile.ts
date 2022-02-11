@@ -12,7 +12,6 @@ export function useDownloadFile() {
 
       const { data, error } = await downloadFileRequest({ filename });
 
-      console.log({ data });
       if (error) throw new Error(error.message);
       else if (data) {
         const url = URL.createObjectURL(data);
