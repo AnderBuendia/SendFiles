@@ -1,5 +1,5 @@
 import { useEffect, FC, ReactNode } from 'react';
-import '@Components/Login/Login.css';
+import styles from '@Components/Login/Login.module.css';
 import { useLocation } from 'wouter';
 import { Typography } from '@supabase/ui';
 import { useAuthenticate } from '@Application/authenticate';
@@ -20,7 +20,7 @@ const Container: FC<ContainerProps> = ({ children }) => {
 
   if (isLogged) {
     return (
-      <div className="login-msg-container">
+      <div className={styles.loginMsgContainer}>
         <Typography.Text strong>Redirecting...</Typography.Text>
         <Spinner />
       </div>

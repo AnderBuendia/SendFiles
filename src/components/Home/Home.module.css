@@ -1,4 +1,4 @@
-.summary-wrapper {
+.summaryWrapper {
   text-align: left;
   background: var(--bg-300);
   margin-top: 32px;
@@ -6,21 +6,21 @@
   padding: 12px;
 }
 
-.summary-wrapper > a {
+.summaryWrapper > a {
   color: var(--secondary-300);
   font-size: 1rem;
   text-decoration: none;
 }
 
-.summary-wrapper > a:hover {
+.summaryWrapper > a:hover {
   opacity: 0.6;
 }
 
-.summary-wrapper > h3 {
+.summaryWrapper > h3 {
   margin: auto;
   color: var(--secondary-300);
 }
 
-.summary-wrapper > p > span {
+.summaryWrapper > p > span {
   color: var(--secondary-300);
 }

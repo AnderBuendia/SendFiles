@@ -1,4 +1,4 @@
-.create-link-form-wrapper {
+.createLinkFormWrapper {
   width: 70%;
   display: flex;
   flex-direction: column;
@@ -7,11 +7,11 @@
   margin: auto;
 }
 
-.label-group {
-  margin-right: 8px;
-}
-
-.create-link-form-wrapper > button {
+.createLinkFormWrapper > button {
   margin-top: 8px;
   width: 200px;
+}
+
+.labelGroup {
+  margin-right: 8px;
 }

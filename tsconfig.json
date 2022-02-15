@@ -27,7 +27,8 @@
       "@Interfaces/*": ["src/interfaces/*"],
       "@Enums/*": ["src/enums/*"],
       "@Config/*": ["src/config/*"],
-      "@Services/*": ["src/services/*"]
+      "@Services/*": ["src/services/*"],
+      "@Tests/*": ["src/tests/*"]
     }
   },
   "include": ["./src", "src/service/supabase.ts"]

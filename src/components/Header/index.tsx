@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import '@Components/Header/Header.css';
+import type { FC } from 'react';
+import styles from '@Components/Header/Header.module.css';
 import { Link } from 'wouter';
 import { useUserStorage } from '@Services/storageAdapter';
 import { useAuthenticate } from '@Application/authenticate';
@@ -12,7 +12,7 @@ const Header: FC = () => {
 
   const renderLoginButtons = ({ isLogged }: { isLogged: boolean }) => {
     return isLogged ? (
-      <div className="header-authenticated">
+      <div className={styles.headerAuthenticated}>
         <span>Hi, {user?.email}</span>
         <button className="secondary-button" onClick={() => signOut()}>
           <span>Sign Out</span>
@@ -28,10 +28,10 @@ const Header: FC = () => {
   };
 
   return (
-    <header className="header-container">
+    <header className={styles.headerWrapper}>
       <Link to={MainPaths.INDEX}>
         <a>
-          <SendFilesIcon style="header-logo" />
+          <SendFilesIcon style={styles.headerLogo} />
         </a>
       </Link>
 

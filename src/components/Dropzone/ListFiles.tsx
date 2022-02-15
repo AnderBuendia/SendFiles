@@ -1,4 +1,5 @@
-import { FC } from 'react';
+import type { FC } from 'react';
+import styles from '@Components/Dropzone/Dropzone.module.css';
 import { getUnitFileSize } from '@Lib/utils/file.utils';
 import type { UploadFile } from '@Interfaces/domain/file.interface';
 
@@ -8,11 +9,11 @@ export type ListFiles = {
 
 const ListFiles: FC<ListFiles> = ({ files }) => {
   return (
-    <div className="form">
+    <div className={styles.form}>
       <p className="h3">Files</p>
-      <ul className="list">
+      <ul className={styles.list}>
         {files.map((file) => (
-          <li key={file.lastModified} className="file">
+          <li key={file.lastModified} className={styles.file}>
             <p className="small">{file.original_name}</p>
             <p className="small">{getUnitFileSize(file.size)} MB</p>
           </li>
