@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import '@Components/generic/URLFrame/URLFrame.css';
+import styles from '@Components/generic/URLFrame/URLFrame.module.css';
 import { DuplicateIcon } from '@Components/Icons/duplicate.icon';
 
 interface URLFrameProps {
@@ -12,13 +12,16 @@ const URLFrame: FC<URLFrameProps> = ({ url }) => {
   };
 
   return (
-    <div className="url-wrapper">
+    <div className={styles.urlWrapper}>
       <p className="h3">Your URL is:</p>
-      <div className="link-wrapper">
+      <div className={styles.linkWrapper}>
         <pre>
           <code>{url}</code>
         </pre>
-        <button className="button-primary copy-button" onClick={handleCopyLink}>
+        <button
+          className={`button-primary ${styles.copyButton}`}
+          onClick={handleCopyLink}
+        >
           <span>
             <DuplicateIcon />
           </span>

@@ -10,7 +10,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border-left-color: var(--brand-color_2);
+  border-left-color: var(--bg-500);
 
   animation: spin 1s ease infinite;
 }

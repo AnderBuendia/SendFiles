@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import '@Components/Home/Home.css';
+import styles from '@Components/Home/Home.module.css';
 import { Link } from 'wouter';
 import { Helmet } from 'react-helmet-async';
 import { useLinkStorage } from '@Services/storageAdapter';
@@ -18,7 +18,7 @@ const Home: FC = () => {
       <div className="App-wrapper">
         {link ? <URLFrame url={link.url} /> : <Dropzone />}
 
-        <div className="summary-wrapper">
+        <div className={styles.summaryWrapper}>
           <h3 className="h3">Share your files easily and privately</h3>
           <p>
             <span className="normal-bold">Sendfiles</span> allows you to share

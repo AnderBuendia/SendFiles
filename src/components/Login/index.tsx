@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import '@Components/Login/Login.css';
+import type { FC } from 'react';
+import styles from '@Components/Login/Login.module.css';
 import { Link } from 'wouter';
 import { Auth } from '@supabase/ui';
 import { supabase } from '@Services/api';
@@ -11,9 +11,9 @@ const Login: FC = () => {
   return (
     <div className="App-wrapper">
       <Link to={MainPaths.INDEX}>
-        <a className="login-title">
+        <a className={styles.loginTitle}>
           <span>Sendfiles</span>
-          <SendFilesIcon style="login-icon" />
+          <SendFilesIcon style={styles.loginIcon} />
         </a>
       </Link>
 

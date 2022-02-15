@@ -1,4 +1,4 @@
-.login-msg-container {
+.loginMsgContainer {
   padding-top: 20px;
   background-color: white;
   border-radius: 20px;
@@ -6,13 +6,13 @@
   margin-right: 100px;
 }
 
-.login-form {
+.loginForm {
   width: 100%;
   margin: auto;
   background-color: var(--color-secondary);
 }
 
-.login-title {
+.loginTitle {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -22,13 +22,13 @@
   margin-bottom: 1.5rem;
 }
 
-.login-title > span {
+.loginTitle > span {
   font-weight: 900;
   font-size: 2rem;
   margin-right: 12px;
 }
 
-.login-icon {
+.loginIcon {
   width: 40px;
   height: 40px;
 }

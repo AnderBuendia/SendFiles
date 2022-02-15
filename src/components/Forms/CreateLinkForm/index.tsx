@@ -1,5 +1,5 @@
 import type { FC, FormEvent, ChangeEvent } from 'react';
-import '@Components/Forms/CreateLinkForm/CreateLinkForm.css';
+import styles from '@Components/Forms/CreateLinkForm/CreateLinkForm.module.css';
 import { useForm } from '@Components/Forms/CreateLinkForm/state/hook';
 import { useAuthenticate } from '@Application/authenticate';
 import { useGenerateDownloadLink } from '@Application/link/generateDownloadLink';
@@ -41,11 +41,11 @@ const CreateLinkForm: FC<CreateLinkFormProps> = ({ files }) => {
   };
 
   return (
-    <form className="create-link-form-wrapper" onSubmit={handleSubmit}>
+    <form className={styles.createLinkFormWrapper} onSubmit={handleSubmit}>
       {isLogged && (
         <>
-          <div className="form-group">
-            <label className="label-group" htmlFor="downloads">
+          <div className={styles.formGroup}>
+            <label className={styles.labelGroup} htmlFor="downloads">
               Delete after:
             </label>
             <select
@@ -62,8 +62,8 @@ const CreateLinkForm: FC<CreateLinkFormProps> = ({ files }) => {
             </select>
           </div>
 
-          <div className="form-group">
-            <label className="label-group" htmlFor="password">
+          <div className={styles.formGroup}>
+            <label className={styles.labelGroup} htmlFor="password">
               Password protect
             </label>
             <input type="checkbox" onChange={handleChangeHasPassword} />
