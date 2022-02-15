@@ -1,10 +1,10 @@
-import '@Components/generic/Spinner/Spinner.css';
+import styles from '@Components/generic/Spinner/Spinner.module.css';
 
 const Spinner = () => {
   return (
     <>
-      <div className="center">
-        <div className="spinner"></div>
+      <div className={styles.center}>
+        <div className={styles.spinner}></div>
       </div>
     </>
   );

@@ -1,25 +1,25 @@
-.url-wrapper {
+.urlWrapper {
   background: var(--bg-300);
   padding: 12px;
   border-radius: 6px;
 }
 
-.url-wrapper > p {
+.urlWrapper > p {
   font-weight: 700;
 }
 
-.link-wrapper {
+.linkWrapper {
   position: relative;
 }
 
-.link-wrapper > pre {
+.linkWrapper > pre {
   overflow: auto;
   padding: 1rem;
   background: var(--black);
   border-radius: 6px;
 }
 
-.copy-button {
+.copyButton {
   display: none;
   position: absolute;
   right: 0;
@@ -27,11 +27,11 @@
   margin-top: 8px;
 }
 
-.link-wrapper:hover .copy-button {
+.linkWrapper:hover .copyButton {
   display: inline-block;
   margin-right: 5px;
 }
 
-.copy-button:hover {
+.copyButton:hover {
   cursor: pointer;
 }

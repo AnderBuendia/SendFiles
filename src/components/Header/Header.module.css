@@ -1,29 +1,21 @@
-.header-container {
+.headerWrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.header-figure-ref-logo {
-  width: 40px;
-}
-
-.header-figure-ref-logo:hover {
-  cursor: pointer;
-}
-
-.header-logo {
+.headerLogo {
   width: 40px;
   height: 40px;
 }
 
-.header-authenticated {
+.headerAuthenticated {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.header-authenticated > span {
+.headerAuthenticated > span {
   margin-right: 10px;
   background: var(--primary-700);
   padding-inline: 1rem;

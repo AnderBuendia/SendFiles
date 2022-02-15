@@ -1,5 +1,5 @@
 import { FC, useCallback } from 'react';
-import '@Components/Dropzone/Dropzone.css';
+import styles from '@Components/Dropzone/Dropzone.module.css';
 import { useDropzone } from 'react-dropzone';
 import { useAuthenticate } from '@Application/authenticate';
 import { useUploadFile } from '@Application/file/uploadFile';
@@ -31,7 +31,7 @@ const Dropzone: FC = () => {
   });
 
   return (
-    <div className="dropzone">
+    <div className={styles.dropzone}>
       {uploadedFiles && uploadedFiles.length > 0 ? (
         <>
           {loading ? (
@@ -44,10 +44,10 @@ const Dropzone: FC = () => {
           )}
         </>
       ) : (
-        <div className="drop" {...getRootProps()}>
-          <input {...getInputProps()} />
+        <div className={styles.drop} {...getRootProps()}>
+          <input data-testid="drop-input" {...getInputProps()} />
           {isDragActive ? (
-            <p>Drop file</p>
+            <p className="normal-bold">Drop file</p>
           ) : (
             <>
               <p className="normal-bold">Drag and drop files</p>
