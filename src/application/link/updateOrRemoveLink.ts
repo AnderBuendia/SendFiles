@@ -30,7 +30,7 @@ export function useUpdateOrRemoveLink() {
       );
 
       if (reachLimitDownloads) {
-        const data = await Promise.any([
+        await Promise.any([
           deleteFileRequest({ filename: updatedLink.name }),
           deleteLinkRequest({
             url_query: updatedLink.url_query,
