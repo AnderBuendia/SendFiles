@@ -1,31 +1,50 @@
 # Sendfiles
 
-## Descripción
+## About Sendfiles
 
-Sitio web que te permite la subida de archivos para a través de un enlace, compartirlo con quien necesites. Al copiar la dirección URL en cualquier navegador que se genera al subir el archivo, podrás descargar el archivo. Sistema similar al de Firefox Send.
+Website that allows you to upload files through a link and you can share it with whoever you need.
 
-## 💻 Stack Software
+You can copy the URL address in any browser and you will be able to download the file.
 
-## 📕 Definiciones
+It is a system similar to the old Firefox Send.
 
-## 📋 Requisitos funcionales
+## To Install
 
-### Inicio de sesión
+You need to clone the following repository
 
-- El usuario podrá iniciar sesión en la plataforma mediante usuario y contraseña
+```
+https://github.com/AnderBuendia/sendfiles.git
+```
 
-### Subir archivos
+Go to the root folder and initialize the project
 
-- No es necesario estar registrado en el sistema para subir archivos.
+```
+cd sendfiles
+npm install
+```
 
-### Descargar archivos
+Configure .env files
 
-- El receptor del archivo descargar, no necesitará de cuenta de usuario para descargar dicho archivo.
-- En caso de que el enlace requiera de una contraseña, solo ha de introducir la contraseña que le proporcione el emisor de dicho archivo.
+```
+cp example.env .env.local
+```
 
-## ⛔ Restricciones
+Once the .env files are configured, you can run the project with the following
 
-- Si no tienes una cuenta de usuario registrada, el tamaño de los archivos a subir, estará limitado a 1 MB.
-- Si el usuario está registrado, el tamaño de los archivos a subir, estará limitado a 10 MB.
-- Si el usuario está registrado, podrá añadir una contraseña a los archivos que deseé enviar.
-- Si el usuario está registrado, podrá limitar el número de veces que podrán otros usuarios, descargar los archivos envíados a través del enlace generado (de 1 a 20 descargar por enlace).
+```
+npm run dev
+```
+
+## Notes
+
+To access website
+
+```
+https://anderb.info
+```
+
+Figma design project
+
+```
+https://www.figma.com/file/uDdX5Oub7a7boUcLNmOlGq/Sendfiles
+```
