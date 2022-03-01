@@ -8,12 +8,13 @@
 }
 
 .App-content {
-  width: 82%;
+  width: 85%;
   margin: auto;
   padding-block: 1rem;
 }
 
 .App-main {
+  margin: auto;
   display: flex;
   flex-direction: column;
   background-color: var(--bg-500);
@@ -27,4 +28,25 @@
 .App-wrapper {
   width: 92%;
   margin: auto;
+}
+
+/* Medium Devices */
+@media (min-width: 768px) {
+  .App-content {
+    width: 70%;
+  }
+}
+
+/* Large devices */
+@media (min-width: 992px) {
+  .App-content {
+    width: 60%;
+  }
+}
+
+/* Extra large Devices */
+@media (min-width: 1200px) {
+  .App-content {
+    width: 50%;
+  }
 }
