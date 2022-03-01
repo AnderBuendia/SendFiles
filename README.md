@@ -37,14 +37,8 @@ npm run dev
 
 ## Notes
 
-To access website
+To access website https://anderb.info
 
-```
-https://anderb.info
-```
 
-Figma design project
+Figma design project https://www.figma.com/file/uDdX5Oub7a7boUcLNmOlGq/Sendfiles
 
-```
-https://www.figma.com/file/uDdX5Oub7a7boUcLNmOlGq/Sendfiles
-```
